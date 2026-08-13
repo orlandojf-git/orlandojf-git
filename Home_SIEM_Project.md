@@ -98,17 +98,17 @@ The following represents the **target architecture** for the completed lab.
        [Investigation / Response]
 ```
 
-> **Note:** Replace this topology with a more detailed diagram as the project develops.
+> **Note:** Will replace this topology with a more detailed diagram as the project develops.
 
 ### Planned Components
 
 | Component | Role | OS | IP Address | Status |
 |---|---|---|---|---|
-| SIEM Server | Central log collection/analysis | `[OS]` | `[IP]` | `Planned` |
-| Windows Endpoint | Endpoint telemetry | Windows | `[IP]` | `Planned` |
-| Linux Endpoint | Linux telemetry | Ubuntu | `[IP]` | `Planned` |
-| Network Device | Network/security logs | `[Device]` | `[IP]` | `Planned` |
-| VirtualBox Host | Virtualization | `[OS]` | `[IP]` | `Planned` |
+| SIEM Server | Central log collection/analysis | `Wazuh` | `[IP]` | `Planned` |
+| Windows Endpoint | Endpoint telemetry | Windows | `10.0.0.108` | `Planned` |
+| Linux Endpoint | Linux telemetry | Ubuntu | `10.0.0.124` | `Planned` |
+| Network Device | Network/security logs | `VirtualBox Host-Only Ethernet Adapter` | `192.168.56.1` | `Planned` |
+| VirtualBox Host | Virtualization | `Ubuntu 25.04` | `10.0.0.124` | `Planned` |
 | `[Additional Host]` | `[Role]` | `[OS]` | `[IP]` | `Planned` |
 
 ---
@@ -118,12 +118,12 @@ The following represents the **target architecture** for the completed lab.
 ## Network Configuration
 
 - **Network Type:** Bridged Adapter
-- **Network/Subnet:** `[Subnet IP]`
-- **Gateway:** `[Gateway IP]`
-- **DNS:** `[DNS Server]`
+- **Network/Subnet:** `10.0.0.1/24`
+- **Gateway:** `10.0.0.1`
+- **DNS:** `75.75.75.75`
 - **SIEM IP:** `[IP]`
-- **Windows Endpoint IP:** `[IP]`
-- **Linux Endpoint IP:** `[IP]`
+- **Windows Endpoint IP:** `10.0.0.108`
+- **Linux Endpoint IP:** `10.0.0.124`
 
 ### IP Address Plan
 
@@ -167,15 +167,15 @@ Other:         [IP]
 
 | Resource | Allocation |
 |---|---:|
-| vCPU | `[X]` |
-| RAM | `[X GB]` |
-| Storage | `[X GB]` |
-| Network Adapter | `Bridged` |
-| OS | `[OS + Version]` |
+| vCPU | `2` |
+| RAM | `8192 MB` |
+| Storage | `40 GB` |
+| Network Adapter | `Intel PRO/1000 MT Desktop (Bridged Adapter, Intel(R) Wi-Fi 6 AX200 160 MHz)` |
+| OS | `Ubuntu 25.04 (Plucky Puffin) (64b-bit)` |
 
 ### Installation Notes
 
-[Document installation steps, configuration decisions, errors encountered, and fixes.]
+Configurations decisions were based on recommended prerequisites to run Wazuh Agent on the VM.
 
 ---
 
@@ -544,7 +544,8 @@ Update this section as the project progresses.
 
 ### Biggest Challenge
 
-[Describe the most difficult problem encountered and how you solved it.]
+1. Working with VirtualBox was a learning curve from working with VMWare from undergraduate courses. It took me a while to understand how to configure the Ubuntu VM and to know why certain settings were applied.
+
 
 ### What I Learned
 
